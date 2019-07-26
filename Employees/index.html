@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="http://www.brianshim.com/webtricks/wp-content/uploads/2012/11/stars_favicon.png" type="image/x-icon" />
+    <link href="fontawesome-free-5.5.0-web/css/fontawesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Employees</title>
+    <style>
+        .big-wrapper {
+            width: 100%;
+            height: 100%;
+            background-image: url("img/violin.jpg");
+            background-attachment: fixed;
+            background-repeat: repeat;
+        }
+
+        .wrapper {
+            display: inline-block;
+            padding-left: 300px;
+            width: 1170px;
+        }
+
+        .port-two-text{
+            font-size: 25px;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .par {
+            text-align: center;
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 20px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            width: 90%;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .shape {
+            padding: 2px 16px;
+        }
+
+        .our-port-images{
+            float: left;
+            width: 31%;
+            margin:5px;
+            margin-left: 15px;
+            padding: 25px;         
+        }
+        
+        .p-image-one {
+            opacity: 1;
+            display: block;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            margin-left: 240px;
+            padding-top: 40px;
+        }
+
+        .container-one {
+            position: relative;
+            width: 50%;
+        }
+
+        .overlay-one {
+            position: absolute;
+            top: 40px;
+            left: 240px;
+            height: 92%;
+            width: 92%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: orange;
+        }
+
+        .container-one:hover .overlay-one {
+            opacity: 1;
+        }
+
+        .text-one {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .p-image-two {
+            opacity: 1;
+            display: block;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            margin-left: 240px;
+            padding-top: 40px;
+        }
+
+        .container-two {
+            position: relative;
+            width: 50%;
+        }
+
+        .overlay-two {
+            position: absolute;
+            top: 40px;
+            left: 240px;
+            height: 92%;
+            width: 92%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: orange;
+        }
+
+        .container-two:hover .overlay-two {
+            opacity: 1;
+        }
+
+        .text-two {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .port {
+            background-color: darkgray;
+            height: 1565px;
+            width: 870;
+            padding-top: 10px;
+        }
+
+        .port-two{
+            background-color: white;
+            height: 490px;
+            width: 870;
+            padding-top: 10px;
+        }
+        .port p {
+            font-weight: 900;
+            text-align: center;
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 20px;
+            color: white;
+        }
+
+        .btn-social {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 2px solid white;
+            border-radius: 100%;
+            color: white;
+            font-size: 15px;
+            line-height: 25px;
+            text-align: center;
+            float: right;
+        }
+
+        .btn-social:hover {
+            color: black;
+            background-color: white;
+            float: right;
+        }
+
+        .f-photos img:hover {
+            -webkit-filter: sepia(1) hue-rotate(200deg);
+            filter: sepia(1) hue-rotate(200deg);
+        }
+
+        
+        .sub-two {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sub-three {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sub-four {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sub-four-content-one {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            margin: 10px -16px;
+            z-index: 1;
+        }
+
+        .sub-four-content-two {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px black;
+            padding: 12px 16px;
+            margin: 10px -16px;
+            z-index: 1;
+        }
+
+        .sub-three-content-one {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            margin: 10px -16px;
+            z-index: 1;
+        }
+
+        .sub-three-content-two {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 8px 16px;
+            margin: 10px -16px;
+            z-index: 2;
+        }
+
+        .sub-three-content-three {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px black;
+            padding: 12px 16px;
+            margin: 0px -16px;
+            z-index: 3;
+        }
+
+        .sub-two-content-one {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .sub-two-content-two {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            margin: 0px -16px;
+            z-index: 2;
+        }
+
+        .sub-two-content-three {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px black;
+            padding: 12px 16px;
+            margin: 0px -16px;
+            z-index: 3;
+        }
+
+        
+        .sub-four:hover .sub-four-content-one {
+            display: block;
+        }
+
+        .sub-four:hover .sub-four-content-two {
+            display: block;
+        }
+
+        .sub-three:hover .sub-three-content-one {
+            display: block;
+        }
+
+        .sub-three:hover .sub-three-content-two {
+            display: block;
+        }
+
+        .sub-three:hover .sub-three-content-three {
+            display: block;
+        }
+
+        .sub-two:hover .sub-two-content-one {
+            display: block;
+        }
+
+        .sub-two:hover .sub-two-content-two {
+            display: block;
+        }
+
+        .sub-two:hover .sub-two-content-three {
+            display: block;
+        }
+        
+        #footer-top {
+            background-color: gray;
+            display: inline-block;
+        }
+
+        #footer-bottom {
+            display: inline-block;
+            float: right;
+            width: 870px;
+            height: 60px;
+            background-color: dimgray;
+            padding: 10px;
+        }
+
+        #footer-bottom p {
+            font-size: 10px;
+        }
+
+        .text-developers {
+            font-size: 12px;
+            margin: 0px 128px;
+            color: black;
+        }
+
+        .footer-col h2 {
+            color: black;
+            text-align: left;
+            font-size: 15px;
+            margin: 10px 40px;
+            padding: 5px;
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-align: left;
+        }
+
+        .footer-col h6 {
+            margin: 0 13px;
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .footer-col {
+            display: inline-block;
+            background-color: gray;
+            font-size: 12px;
+            width: 32%;
+        }
+
+        .f-photos {
+            width: 75%;
+            height: 50%;
+            float: right;
+        }
+
+        #footer ul li {
+            display: inline;
+        }
+
+        #nav-container {
+            height: 130px;
+            background-color: white;
+        }
+
+        #nav-inner {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            height: 50px;
+            margin: 0 auto;
+        }
+
+        #logo {
+            float: left;
+            font-size: 2em;
+            margin: 30px 10px;
+        }
+
+        #nav-menu {
+            float: right;
+            margin: 50px 10px;
+        }
+
+        #nav-inner a {
+            color: black;
+            font-weight: 800px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        #nav-menu li {
+            display: inline-block;
+            list-style: none;
+            font-weight: 500px;
+            margin: 0 10px;
+        }
+
+        #nav-menu li a:hover {
+            color: #a98307;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="big-wrapper">
+        <div class="wrapper">
+            <div id="nav-container">
+                <div id="nav-inner">
+                    <a id="logo">DesignCo</a>
+                    <ul id="nav-menu">
+                         
+                         <li><a href="file:///C:/Users/user/Desktop/homepage/index.html" target="_blank"><b>HOME</b></a></li>
+
+                        <li class="sub-two">
+                            <a href="">
+                                <b>Features</b>
+                                <div class="sub-two-content-one">Themes
+                                    <div class="sub-two-content-two">Fonts
+                                        <div class="sub-two-content-three">Icons</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="sub-three">
+                            <a href=file:///C:/Users/user/Desktop/third-page/index.html target="_blank">
+                                <b>Blog</b>
+                                <div class="sub-three-content-one">Medium
+                                    <div class="sub-three-content-two">Twitter
+                                        <div class="sub-three-content-three">BlogSpot</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="">
+                                <b>Employees</b>
+                            </a>
+                        </li>
+                        <li class="sub-four">
+                            <a href="">
+                                <b>Purchase</b>
+                                <div class="sub-four-content-one">Card
+                                    <div class="sub-four-content-two">Cash</div>
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href=file:///C:/Users/user/Desktop/second-page/index.html target="_blank">
+                                <b>Contact</b>
+                            </a>
+                        </li>
+                         
+                         
+                    </ul>
+                </div>
+            </div>
+            <div class="port">
+                <p>TOP EMPLOYEES OF NOVEMBER</p>
+                <hr>
+
+                <div class="container-one">
+                    <img src="img/womann.jpg" class="p-image-one" width="400" height="500">
+                    <div class="overlay-one">
+                        <div class="text-one"><br>Michelle J'auix<br>DESIGNCO MARKETING TEAM</div>
+                    </div>
+                </div>
+
+                <div class="par">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto veritatis laudantium amet quasi facilis consectetur quae consequatur quisquam aliquam, labore modi sapiente, dolorem possimus quis fuga maxime, dolores error ratione.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto veritatis laudantium amet quasi facilis consectetur quae consequatur quisquam aliquam, labore modi sapiente, dolorem possimus quis fuga maxime, dolores error ratione.</div>
+                <p><button class="w3-button w3-block w3-orange"><i>Michelles' Works</i></button></p>
+
+                <div class="container-two">
+                    <img src="img/f4.jpg" class="p-image-two" width="400" height="500">
+                    <div class="overlay-two">
+                        <div class="text-two"><br>Jordan James<br>DESIGNCO DEVELOPMENT TEAM</div>
+                    </div>
+                </div>
+
+                <div class="par">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto veritatis laudantium amet quasi facilis consectetur quae consequatur quisquam aliquam, labore modi sapiente, dolorem possimus quis fuga maxime, dolores error ratione.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto veritatis laudantium amet quasi facilis consectetur quae consequatur quisquam aliquam, labore modi sapiente, dolorem possimus quis fuga maxime, dolores error ratione.</div>
+                <p><button class="w3-button w3-block w3-orange"><i>Jordans' Works</i></button></p>
+            </div>
+            <div class="port-two">
+               <div class="port-two-text">Rate for Best Employee of December</div>
+                <div class="our-port">
+                    <div class="our-port-images">
+                        <div class="card">
+                            <img src="img/f1.jpg">
+                            <div class="shape">
+                                <h4><b>Joel</b></h4>
+                                <div>Technical Support</div>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="our-port-images">
+                        <div class="card">
+                            <img src="img/emp.jpg" width="200" height="255">
+                            <div class="shape">
+                                <h4><b>Nirvana</b></h4>
+                                <div>Management Leader</div>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="our-port-images">
+                        <div class="card">
+                            <img src="img/tom.jpg" width="200" height="255">
+                            <div class="shape">
+                                <h4><b>Jakie</b></h4>
+                                <div>Architect Engineer</div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                <div class="w3-bar">
+                    <button class="w3-bar-item w3-button w3-black" style="width:33.3%">Rate Joel</button>
+                    <button class="w3-bar-item w3-button w3-gray" style="width:33.3%">Rate Nirvana</button>
+                    <button class="w3-bar-item w3-button w3-black" style="width:33.4%">Rate Jakie</button>
+                </div>
+            </div>
+            <div id="footer">
+                <div id="footer-top">
+
+                    <div class="footer-col">
+                        <h2>Our company <b>DESIGNCO</b> has purpose to make a world much more capable for internet technologies. We are providing web based solutions. Come and be a part of this growing technology. </h2>
+                    </div>
+
+                    <div class="footer-col">
+                        <h6><b><a href="Publish What You Learn">Publish What You Learn</a></b></h6>
+                        <i>You can learn and share at the same. Share your information about tech with us! Join the family!</i>
+                        <h6><b><a href="Redesigning With Personality">Design With Personality</a></b></h6>
+                        <i>Be yourself and be happy!</i>
+                        <h6><b><a href="Learn From Best Resources">Learn From Best Resources</a></b></h6>
+                        <i>Learn from best people all around the world without any purchase!</i>
+                    </div>
+                    <div class="footer-col">
+                        <div class="f-photos">
+                            <a href="img/f1.jpg"><img src="img/f1.jpg" width="60" height="80"></a>
+                            <a href="img/f9.jpg"><img src="img/f9.jpg" width="60" height="80"></a>
+                            <a href="img/f4.jpg"><img src="img/f4.jpg" width="60" height="80"></a>
+                            <a href="img/f8.jpg"><img src="img/f8.jpg" width="60" height="80"></a>
+                            <a href="img/f5.jpg"><img src="img/f5.jpg" width="60" height="80"></a>
+                            <a href="img/f7.jpg"><img src="img/f7.jpg" width="60" height="80"></a>
+                        </div>
+                        <div class="text-developers"><b>Dev.Team</b></div>
+                    </div>
+                </div>
+
+                <div id="footer-bottom">
+                    <ul>
+                        <li>
+                            <a href="#" class="btn-social">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social">
+                                <i class="fa fa-wordpress"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social">
+                                <i class="fa fa-reddit"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social">
+                                <i class="fa fa-pinterest"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <p>© 2019 DESIGNCO. All Rights Reserved. <a href="Terms and Conditions">Terms and Conditions</a> <a href="Legal Notice">Legal Notice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
