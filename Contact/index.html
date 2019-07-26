@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="http://www.brianshim.com/webtricks/wp-content/uploads/2012/11/stars_favicon.png" type="image/x-icon" />
+    <link href="fontawesome-free-5.5.0-web/css/fontawesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Contact</title>
+    <style>
+
+        table {
+            width: 130%;
+            box-sizing: border-box;
+            box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+            font-family: 'Ubuntu';
+            border-spacing: 0;
+            background-color: #333333;
+            margin-left: 0px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-sizing: border-box;
+        }
+
+        th {
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 10px 0;
+            color: rgba(255, 255, 255, 0.5);
+            background-color: gray;
+            letter-spacing: 1px;
+        }
+
+        td {
+            width: 14.285%;
+            transition: all 0.3s;
+            font-size: 14px;
+            color: gray;
+            font-weight: 400;
+            font-size: 14px;
+            padding: 1.5% 1.5% 5%;
+            vertical-align: initial;
+            padding: 1.5% 0;
+            height: 75px;
+        }
+
+        .day:hover {
+            background-color: rgba(0, 0, 0, 1);
+            cursor: pointer;
+        }
+
+        span.number {
+            margin-left: 10%
+        }
+
+        span.event {
+            height: 4px;
+            background-color: rgba(0, 0, 0, .3);
+            display: block;
+            margin: 5px 10%;
+            border-radius: 2px;
+            background-color: orange;
+        }
+
+        span.event-multiday {
+            margin: 5px -2px;
+            border-radius: 0;
+        }
+
+        span.event-multiday-start {
+            margin-right: -4px;
+        }
+
+        span.event-multiday-finish {
+            margin-left: -4px;
+        }
+
+        span.event-ghost {
+            background-color: transparent;
+        }
+
+        
+        #map {
+            width: 100%;
+            height: 500px;
+            background-color: grey;
+        }
+        .fa {
+  padding: 5px;
+  font-size: 10px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  float:none;
+}
+    #icons {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+    }
+
+    #icons:hover {
+            -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+    }
+    .fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+        .big-wrapper {
+            width: 100%;
+            height: 100%;
+            background-image: url("img/violin.jpg");
+            background-attachment: fixed;
+        }
+
+        .wrapper {
+            display: inline-block;
+            padding-left: 300px;
+            width: 1170px;
+        }
+        
+        .gen-form{
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: white;
+            width: 870px;
+            height: 1020px;
+            padding: 50px 40px;
+        }
+        .keep-in-touch{
+            float: left;
+            width: 75%;
+        }
+        
+        .contact{
+            float: right;
+            width: 25%;
+        }
+        .f-photos img:hover {
+            -webkit-filter: sepia(1) hue-rotate(200deg);
+            filter: sepia(1) hue-rotate(200deg);
+        }
+      .sub-one {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sub-two {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sub-three {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sub-four {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sub-four-content-one {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            margin: 10px -16px;
+            z-index: 1;
+        }
+
+        .sub-four-content-two {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px black;
+            padding: 12px 16px;
+            margin: 10px -16px;
+            z-index: 1;
+        }
+
+        .sub-three-content-one {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            margin: 10px -16px;
+            z-index: 1;
+        }
+
+        .sub-three-content-two {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 8px 16px;
+            margin: 10px -16px;
+            z-index: 2;
+        }
+
+        .sub-three-content-three {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px black;
+            padding: 12px 16px;
+            margin: 0px -16px;
+            z-index: 3;
+        }
+
+        .sub-two-content-one {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .sub-two-content-two {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            margin: 0px -16px;
+            z-index: 2;
+        }
+
+        .sub-two-content-three {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px black;
+            padding: 12px 16px;
+            margin: 0px -16px;
+            z-index: 3;
+        }
+
+        .sub-one-content-one {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .sub-one-content-two {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px black;
+            padding: 12px 16px;
+            margin: 10px -16px;
+            z-index: 2;
+        }
+
+        .sub-four:hover .sub-four-content-one {
+            display: block;
+        }
+
+        .sub-four:hover .sub-four-content-two {
+            display: block;
+        }
+
+        .sub-three:hover .sub-three-content-one {
+            display: block;
+        }
+
+        .sub-three:hover .sub-three-content-two {
+            display: block;
+        }
+
+        .sub-three:hover .sub-three-content-three {
+            display: block;
+        }
+
+        .sub-one:hover .sub-one-content-two {
+            display: block;
+        }
+
+        .sub-one:hover .sub-one-content-one {
+            display: block;
+        }
+
+        .sub-two:hover .sub-two-content-one {
+            display: block;
+        }
+
+        .sub-two:hover .sub-two-content-two {
+            display: block;
+        }
+
+        .sub-two:hover .sub-two-content-three {
+            display: block;
+        }
+
+        #footer-top {
+            background-color: gray;
+            display: inline-block;
+        }
+
+        #footer-bottom {
+            display: inline-block;
+            float: right;
+            width: 870px;
+            height: 60px;
+            background-color: dimgray;
+            padding: 10px;
+        }
+
+        #footer-bottom p {
+            font-size: 10px;
+        }
+
+        .text-developers {
+            font-size: 12px;
+            margin: 0px 128px;
+            color: black;
+        }
+
+        .footer-col h2 {
+            color: black;
+            text-align: left;
+            font-size: 15px;
+            margin: 10px 40px;
+            padding: 5px;
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-align: left;
+        }
+
+        .footer-col h6 {
+            margin: 0 13px;
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .footer-col {
+            display: inline-block;
+            background-color: gray;
+            font-size: 12px;
+            width: 32%;
+        }
+
+        .f-photos {
+            width: 75%;
+            height: 50%;
+            float: right;
+        }
+
+        #footer ul li {
+            display: inline;
+        }
+
+        #nav-container {
+            height: 130px;
+            background-color: white;
+        }
+
+        #nav-inner {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            height: 50px;
+            margin: 0 auto;
+        }
+
+        #logo {
+            float: left;
+            font-size: 2em;
+            margin: 30px 10px;
+        }
+
+        #nav-menu {
+            float: right;
+            margin: 50px 10px;
+        }
+
+        #nav-inner a {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: black;
+            font-weight: 800px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        #nav-menu li {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: inline-block;
+            list-style: none;
+            font-weight: 500px;
+            margin: 0 10px;
+        }
+
+        #nav-menu li a:hover {
+            color: #a98307;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="big-wrapper">
+        <div class="wrapper">
+            <div id="nav-container">
+                <div id="nav-inner">
+                    <a id="logo">DesignCo</a>
+                    <ul id="nav-menu">
+                        <li class="sub-one">
+                            <a href="file:///C:/Users/user/Desktop/homepage/index.html" target="_blank">
+                                <b>Home</b>
+                                <div class="sub-one-content-one">Our Mission
+                                    <div class="sub-one-content-two">Our Vision</div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="sub-two">
+                            <a href="">
+                                <b>Features</b>
+                                <div class="sub-two-content-one">Themes
+                                    <div class="sub-two-content-two">Fonts
+                                        <div class="sub-two-content-three">Icons</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="sub-three">
+                            <a href="file:///C:/Users/user/Desktop/third-page/index.html" target="_blank">
+                                <b>Blog</b>
+                                <div class="sub-three-content-one">Medium
+                                    <div class="sub-three-content-two">Twitter
+                                        <div class="sub-three-content-three">BlogSpot</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="file:///C:/Users/user/Desktop/fourth-page/index.html" target="_blank">
+                                <b>Employees</b>
+                            </a>
+                        </li>
+                        <li class="sub-four">
+                            <a href="">
+                                <b>Purchase</b>
+                                <div class="sub-four-content-one">Card
+                                    <div class="sub-four-content-two">Cash</div>
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                            <b>CONTACT</b>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="sign">
+                <img src="img/z.png" width="100%">
+            </div>
+            <div id="map"></div>
+            <script>
+                function initMap() {
+                    var uluru = {
+                        lat: 41.015137,
+                        lng: 28.979530
+                    };
+                    var map = new google.maps.Map(
+                        document.getElementById('map'), {
+                            zoom: 4,
+                            center: uluru
+                        });
+                    var marker = new google.maps.Marker({
+                        position: uluru,
+                        map: map
+                    });
+                }
+            </script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaZCigs2hgs3KegG07UWfhataCogVjxWw&callback=initMap">
+            </script>
+            <div class="gen-form">
+                <div class="keep-in-touch"><b>Let's Keep in Touch</b>
+                    <br>
+                    <p>You can reach us from here! Be a part of our family and enjoy your exlusive quality photos. Our theme is for the year 2018 is Black and White. Like MJ says: "Black or White, it does not matter..."</p>
+                    <br>
+                    <form>
+                        <b>First Name</b><br>
+                        <input type="text" name="firstname" placeholder="Name">
+                        <br>
+                        <b>Email</b><br>
+                        <input type="email" name="emailaddress" placeholder="Email Address"><br>
+                        <b>Message</b><br>
+                        <textarea rows="4" cols="50" placeholder="Type Your Message"></textarea>
+                        <br>
+                        <table><b>Please Choose Available Day/s</b>
+                            <tr>
+                                <th class="day-name" style="color: white;">Monday</th>
+                                <th class="day-name"  style="color: white;">Tuesday</th>
+                                <th class="day-name"  style="color: white;">Wednesday</th>
+                                <th class="day-name"  style="color: white;">Thursday</th>
+                                <th class="day-name"  style="color: white;">Friday</th>
+                                <th class="day-name"  style="color: white;">Saturday</th>
+                                <th class="day-name"  style="color: white;">Sunday</th>
+                            </tr>
+                            <tr>
+                                <td class="day"><span class="number">31</span></td>
+                                <td class="day"><span class="number">1</span><span class="event"></span><span class="event"></span></td>
+                                <td class="day"><span class="number">2</span></td>
+                                <td class="day"><span class="number">3</span><span class="event event-multiday-start"></span></td>
+                                <td class="day"><span class="number">4</span><span class="event event-multiday"></span>
+                                    <span class="event event-multiday-start eventclass" style="background-color:orange;"></span>
+                                    <span class="event"></span></td>
+                                <td class="day"><span class="number">5</span><span class="event event-multiday-finish"></span><span class="event event-multiday eventclass" style="background-color:orange;"></span></td>
+                                <td class="day"><span class="number">6</span><span class="event event-ghost"></span><span class="event event-multiday-finish eventclass" style="background-color:orange;"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="day"><span class="number">7</span></td>
+                                <td class="day"><span class="number">8</span><span class="event"></span></td>
+                                <td class="day"><span class="number">9</span></td>
+                                <td class="day"><span class="number">10</span></td>
+                                <td class="day"><span class="number">11</span><span class="event"></span></td>
+                                <td class="day"><span class="number">12</span></td>
+                                <td class="day"><span class="number">13</span></td>
+                            </tr>
+                            <tr>
+                                <td class="day"><span class="number">14</span></td>
+                                <td class="day"><span class="number">15</span></td>
+                                <td class="day"><span class="number">16</span><span class="event"></span></td>
+                                <td class="day"><span class="number">17</span><span class="event"></span></td>
+                                <td class="day"><span class="number">18</span></td>
+                                <td class="day"><span class="number">19</span></td>
+                                <td class="day"><span class="number">20</span></td>
+                            </tr>
+                            <tr>
+                                <td class="day"><span class="number">21</span></td>
+                                <td class="day"><span class="number">22</span></td>
+                                <td class="day"><span class="number">23</span></td>
+                                <td class="day"><span class="number">24</span><span class="event"></span></td>
+                                <td class="day"><span class="number">25</span></td>
+                                <td class="day"><span class="number">26</span></td>
+                                <td class="day"><span class="number">27</span></td>
+                            </tr>
+                            <tr>
+                                <td class="day"><span class="number">28</span><span class="event event-multiday" style="background-color:orange;"></span></td>
+                                <td class="day"><span class="number">29</span><span class="event event-multiday-finish" style="background-color:darkorange;"></span></td>
+                                <td class="day"><span class="number">30</span></td>
+                                <td class="day"><span class="number">1</span></td>
+                                <td class="day"><span class="number">2</span><span class="event"></span></td>
+                                <td class="day"><span class="number">3</span></td>
+                                <td class="day"><span class="number">4</span></td>
+                            </tr>
+                            <tr>
+                                <td class="day"><span class="number">5</span></td>
+                                <td class="day"><span class="number">6</span><span class="event"></span></td>
+                                <td class="day"><span class="number">7</span></td>
+                                <td class="day"><span class="number">8</span></td>
+                                <td class="day"><span class="number">9</span></td>
+                                <td class="day"><span class="number">10</span><span class="event"></span></td>
+                                <td class="day"><span class="number">11</span></td>
+                            </tr>
+                        </table>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="contact"><b>Contact Info</b>
+                    <br>
+                    <p>3200 Cumh. Blvd.</p>
+                    <p>Motto Beach, 90266 Australia</p>
+                    <br>
+                    <p>Phone:+(90)5453140400</p>
+                    <p>Fax:+(90)5445483678</p>
+                    <br>
+                    <div id="icons">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-google"></a>
+                        <a href="#" class="fa fa-linkedin"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div id="footer-top">
+
+                    <div class="footer-col">
+                        <h2>Our company <b>DESIGNCO</b> has purpose to make a world much more capable for internet technologies. We are providing web based solutions. Come and be a part of this growing technology. </h2>
+                    </div>
+
+                    <div class="footer-col">
+                        <h6><b><a href="Publish What You Learn">Publish What You Learn</a></b></h6>
+                        <i>You can learn and share at the same. Share your information about tech with us! Join the family!</i>
+                        <h6><b><a href="Redesigning With Personality">Design With Personality</a></b></h6>
+                        <i>Be yourself and be happy!</i>
+                        <h6><b><a href="Learn From Best Resources">Learn From Best Resources</a></b></h6>
+                        <i>Learn from best people all around the world without any purchase!</i>
+                    </div>
+                    <div class="footer-col">
+                        <div class="f-photos">
+                            <a href="img/f1.jpg"><img src="img/f1.jpg" width="60" height="80"></a>
+                            <a href="img/f9.jpg"><img src="img/f9.jpg" width="60" height="80"></a>
+                            <a href="img/f4.jpg"><img src="img/f4.jpg" width="60" height="80"></a>
+                            <a href="img/f8.jpg"><img src="img/f8.jpg" width="60" height="80"></a>
+                            <a href="img/f5.jpg"><img src="img/f5.jpg" width="60" height="80"></a>
+                            <a href="img/f7.jpg"><img src="img/f7.jpg" width="60" height="80"></a>
+                        </div>
+                        <div class="text-developers"><b>Dev.Team</b></div>
+                    </div>
+                </div>
+
+                <div id="footer-bottom">
+                    <p>© 2019 DESIGNCO. All Rights Reserved. <a href="Terms and Conditions">Terms and Conditions</a> <a href="Legal Notice">Legal Notice</a></p>
+                </div>
+            </div>
+            <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
+        </div>
+    </div>
+
+</body>
+
+</html>
