@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="http://www.brianshim.com/webtricks/wp-content/uploads/2012/11/stars_favicon.png" type="image/x-icon" />
+    <link href="fontawesome-free-5.5.0-web/css/fontawesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>Blog</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            color: black;
+            background: #eee;
+        }
+        
+        #more {display: none;}
+        #moretwo {display: none;}
+        
+         .sub-one {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sub-two {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sub-three {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sub-four {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sub-four-content-one {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            margin: 10px -16px;
+            z-index: 1;
+        }
+
+        .sub-four-content-two {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px black;
+            padding: 12px 16px;
+            margin: 10px -16px;
+            z-index: 1;
+        }
+
+        .sub-three-content-one {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            margin: 10px -16px;
+            z-index: 1;
+        }
+
+        .sub-three-content-two {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 8px 16px;
+            margin: 10px -16px;
+            z-index: 2;
+        }
+
+        .sub-three-content-three {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px black;
+            padding: 12px 16px;
+            margin: 0px -16px;
+            z-index: 3;
+        }
+
+        .sub-two-content-one {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .sub-two-content-two {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            margin: 0px -16px;
+            z-index: 2;
+        }
+
+        .sub-two-content-three {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px black;
+            padding: 12px 16px;
+            margin: 0px -16px;
+            z-index: 3;
+        }
+
+        .sub-one-content-one {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .sub-one-content-two {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px black;
+            padding: 12px 16px;
+            margin: 10px -16px;
+            z-index: 2;
+        }
+
+        .sub-four:hover .sub-four-content-one {
+            display: block;
+        }
+
+        .sub-four:hover .sub-four-content-two {
+            display: block;
+        }
+
+        .sub-three:hover .sub-three-content-one {
+            display: block;
+        }
+
+        .sub-three:hover .sub-three-content-two {
+            display: block;
+        }
+
+        .sub-three:hover .sub-three-content-three {
+            display: block;
+        }
+
+        .sub-one:hover .sub-one-content-two {
+            display: block;
+        }
+
+        .sub-one:hover .sub-one-content-one {
+            display: block;
+        }
+
+        .sub-two:hover .sub-two-content-one {
+            display: block;
+        }
+
+        .sub-two:hover .sub-two-content-two {
+            display: block;
+        }
+
+        .sub-two:hover .sub-two-content-three {
+            display: block;
+        }
+        
+        #flicker-feed ul li{
+            width: 50%;
+            display: inline-block;
+            margin: 10px -10px;
+            float: inherit;
+            border-radius: 8px;
+            transition: transform .2s;
+        }
+        
+        #flicker-feed ul li:hover {
+          transform: scale(1.5);
+        }
+        
+        #accordion{
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            text-align: left;
+        }
+        
+        #ac-section{
+            border: 3px solid orange;
+            width: 240px;
+            text-align: center;
+        }
+        
+        .widget {
+            position: relative;
+            margin: 50px 50px;
+            width: 180px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
+        }
+
+        .widget-tabs {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 9px 12px 0;
+            text-align: left;
+            direction: rtl;
+            border-bottom: 1px solid #ddd;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .widget-tab,
+        .widget-list:target:first-of-type~.widget-tabs>.widget-tab:first-child~.widget-tab,
+        .widget-list:target:nth-of-type(2)~.widget-tabs>.widget-tab:nth-child(2)~.widget-tab,
+        .widget-list:target:last-of-type~.widget-tabs>.widget-tab:last-child~.widget-tab {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 3px;
+            line-height: 36px;
+            font-weight: normal;
+            color: #999;
+            background: #fcfcfc;
+            border: solid #ddd;
+            border-width: 1px 1px 0;
+            border-radius: 5px 5px 0 0;
+            padding-bottom: 0;
+            bottom: auto;
+        }
+
+        .widget-tab>.widget-tab-link,
+        .widget-list:target:first-of-type~.widget-tabs>.widget-tab:first-child~.widget-tab>.widget-tab-link,
+        .widget-list:target:nth-of-type(2)~.widget-tabs>.widget-tab:nth-child(2)~.widget-tab>.widget-tab-link,
+        .widget-list:target:last-of-type~.widget-tabs>.widget-tab:last-child~.widget-tab>.widget-tab-link {
+            margin: 0;
+            border-top: 0;
+        }
+
+        .widget-tab+.widget-tab {
+            margin-right: -1px;
+        }
+
+        .widget-tab:last-child,
+        .widget-list:target:first-of-type~.widget-tabs>.widget-tab:first-child,
+        .widget-list:target:nth-of-type(2)~.widget-tabs>.widget-tab:nth-child(2),
+        .widget-list:target:last-of-type~.widget-tabs>.widget-tab:last-child {
+            bottom: -1px;
+            margin-top: 0;
+            padding-bottom: 2px;
+            line-height: 34px;
+            font-weight: bold;
+            color: #555;
+            background: white;
+            border-top: 0;
+        }
+
+        .widget-tab:last-child>.widget-tab-link,
+        .widget-list:target:first-of-type~.widget-tabs>.widget-tab:first-child>.widget-tab-link,
+        .widget-list:target:nth-of-type(2)~.widget-tabs>.widget-tab:nth-child(2)>.widget-tab-link,
+        .widget-list:target:last-of-type~.widget-tabs>.widget-tab:last-child>.widget-tab-link {
+            margin: 0 -1px;
+            border-top: 4px solid orange;
+        }
+
+        .widget-tab-link {
+            display: block;
+            min-width: 60px;
+            padding: 0 7px;
+            color: inherit;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .widget-list {
+            display: none;
+            padding-top: 50px;
+        }
+
+        .widget-list>li+li {
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .widget-list:last-of-type {
+            display: block;
+        }
+
+        .widget-list:target {
+            display: block;
+        }
+
+        .widget-list:target~.widget-list {
+            display: none;
+        }
+
+        .widget-list-link {
+            display: block;
+            line-height: 18px;
+            padding: 10px 12px;
+            font-weight: bold;
+            color: #555;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .widget-list-link:hover {
+            background: #f7f7f7;
+        }
+
+        li:last-child>.widget-list-link {
+            border-radius: 0 0 3px 3px;
+        }
+
+        .widget-list-link>img {
+            float: left;
+            width: 32px;
+            height: 32px;
+            margin: 2px 12px 0 0;
+        }
+
+        .widget-list-link>span {
+            display: block;
+            font-size: 11px;
+            font-weight: normal;
+            color: #999;
+        }
+
+        
+        .blog-header li a{
+            color: dimgray;
+            list-style-type: none;
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-decoration: none;
+        }
+        
+        
+        .c-image{
+            width: 30%;
+            float: left;
+        }
+        
+        .c-text{
+            width: 70%;
+            float: right;
+            text-align: left;
+        }
+        
+        .topnav {
+            overflow: hidden;
+            float: left;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a.active {
+            background-color: dimgray;
+            color: white;
+        }
+
+        .topnav .search-container {
+            float: right;
+        }
+
+        .topnav input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .topnav .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav .search-container {
+                float: none;
+            }
+
+            .topnav a,
+            .topnav input[type=text],
+            .topnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+        }
+
+        .big-wrapper {
+            width: 100%;
+            height: 100%;
+            background-image: url("img/violin.jpg");
+            background-attachment:fixed;
+            /*background-repeat: repeat;*/
+        }
+
+        .wrapper {
+            display: inline-block;
+            padding-left: 300px;
+            width: 1170px;
+        }
+
+        .content {
+            padding: 10px 15px;
+            background-color: white;
+            width: 870px;
+            height: 2099px;
+        }
+
+        .article {
+            float: left;
+            width: 65%;
+        }
+
+        .side-page {
+            float: right;
+            width: 35%;
+        }
+
+        .btn-social {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 2px solid white;
+            border-radius: 100%;
+            color: white;
+            font-size: 15px;
+            line-height: 25px;
+            text-align: center;
+            float: right;
+        }
+
+        .btn-social:hover {
+            color: black;
+            background-color: white;
+            float: right;
+        }
+
+        .f-photos img:hover {
+            -webkit-filter: sepia(1) hue-rotate(200deg);
+            filter: sepia(1) hue-rotate(200deg);
+        }
+
+        #footer-top {
+            background-color: gray;
+            display: inline-block;
+        }
+
+        #footer-bottom {
+            display: inline-block;
+            float: right;
+            width: 870px;
+            height: 60px;
+            background-color: dimgray;
+            padding: 10px;
+        }
+
+        #footer-bottom p {
+            font-size: 10px;
+        }
+
+        .text-developers {
+            font-size: 12px;
+            margin: 0px 128px;
+            color: black;
+        }
+
+        .footer-col h2 {
+            color: black;
+            text-align: left;
+            font-size: 15px;
+            margin: 30px 40px;
+            padding: 5px;
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-align: left;
+        }
+
+        .footer-col h6 {
+            margin: 0 25px;
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .footer-col {
+            display: inline-block;
+            background-color: gray;
+            font-size: 12px;
+            width: 32%;
+        }
+
+        .f-photos {
+            width: 75%;
+            height: 50%;
+            float: right;
+            padding: -9px;
+        }
+
+        #footer ul li {
+            display: inline;
+        }
+
+        #nav-container {
+            height: 130px;
+            background-color: white;
+        }
+
+        #nav-inner {
+            font-family: font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            height: 50px;
+            margin: 0 auto;
+        }
+
+        #logo {
+            float: left;
+            font-size: 2em;
+            margin: 30px 10px;
+        }
+
+        #nav-menu {
+            float: right;
+            margin: 50px 10px;
+        }
+
+        #nav-inner a {
+            color: black;
+            font-weight: 800px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        #nav-menu li {
+            display: inline-block;
+            list-style: none;
+            font-weight: 500px;
+            margin: 0 10px;
+        }
+
+        #nav-menu li a:hover {
+            color: #a98307;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+    </style>
+        <script>
+        $(function() {
+            $("#accordion").accordion();
+        });
+        </script>
+        <script>
+            
+            function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+            
+        </script>
+        <script>
+            
+            function myFunctionTwo() {
+  var dots = document.getElementById("dotstwo");
+  var moreText = document.getElementById("moretwo");
+  var btnText = document.getElementById("myBtnTwo");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+            
+        </script>
+</head>
+
+<body>
+    <div class="big-wrapper">
+        <div class="wrapper">
+            <div id="nav-container">
+                <div id="nav-inner">
+                    <a id="logo">DesignCo</a>
+                    <ul id="nav-menu">
+                         <li class="sub-one">
+                            <a href="file:///C:/Users/user/Desktop/homepage/index.html" target="_blank">
+                                <b>Home</b>
+                                <div class="sub-one-content-one">Our Mission
+                                    <div class="sub-one-content-two">Our Vision</div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="sub-two">
+                            <a href="">
+                                <b>Features</b>
+                                <div class="sub-two-content-one">Themes
+                                    <div class="sub-two-content-two">Fonts
+                                        <div class="sub-two-content-three">Icons</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="sub-three"><b>BLOG</b></li>
+
+                        <li>
+                            <a href="file:///C:/Users/user/Desktop/fourth-page/index.html" target="_blank">
+                                <b>Employees</b>
+                            </a>
+                        </li>
+                        <li class="sub-four">
+                            <a href="">
+                                <b>Purchase</b>
+                                <div class="sub-four-content-one">Card
+                                    <div class="sub-four-content-two">Cash</div>
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                                <a href=file:///C:/Users/user/Desktop/second-page/index.html target="_blank"><b>Contact</b></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="entrance-photo">
+                <img src="img/w.png" width="870">
+            </div>
+            <div class="content">
+                <div class="article">
+
+                    <div id="content-one"><b>Publish What You Learn</b></div>
+                    <img src="img/palms.jpg" width="500px" height="300px">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure at ipsa  earum modi recusandae, nostrum voluptate totam porro eos dignissimos animi consectetur, <span id="dots">...</span><span id="more">sapiente neque beatae cumque voluptas dolore omnis vitae!lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis tempore, quo beatae reiciendis maxime accusantium, voluptatum possimus iure. Eveniet ipsa praesentium doloribus temporibus sed nemo autem reiciendis nesciunt, ea dolorem.</span></p><br>
+                    <button class="w3-button w3-border w3-hover-gray" onclick="myFunction()" id="myBtn">Further Reading</button>
+                    <hr>
+
+                    <div id="content-two"><b>Design With Personality</b></div>
+                    <img src="img/bridge.jpg" width="500px" height="300px">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium recusandae molestiae quasi assumenda. A dignissimos sit asperiores obcaecati explicabo illo voluptate, <span id="dotstwo">...</span><span id="moretwo">similique dolorem quia reiciendis, aliquid earum, ducimus quam quod.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis tempore, quo beatae reiciendis maxime accusantium, voluptatum possimus iure. Eveniet ipsa praesentium doloribus temporibus sed nemo autem reiciendis nesciunt, ea dolorem.</span></p><br>
+                    <button class="w3-button w3-border w3-hover-gray" onclick="myFunctionTwo()" id="myBtnTwo">Further Reading</button>
+                    <hr>
+
+                    <div id="content-three"><b>Learn From Best Resources</b></div>
+                    <img src="img/rose.jpg" width="500px" height="300px">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis tempore, quo beatae reiciendis maxime accusantium, voluptatum possimus iure. Eveniet ipsa praesentium doloribus temporibus sed nemo autem reiciendis nesciunt, ea dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis tempore, quo beatae reiciendis maxime accusantium, voluptatum possimus iure. Eveniet praesentium doloribus temporibus sed nemo autem reiciendis nesci dolorem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis tempore, quo beatae reiciendis maxime accusantium, voluptatum possimus iure. Eveniet ipsa praesentium doloribus temporibus sed nemo autem reiciendis nesciunt, ea dolorem.</p><br>
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis tempore, quo beatae reiciendis maxime accusantium, voluptatum possimus iure. Eveniet ipsa praesentium doloribus temporibus sed nemo autem reiciendis nesciunt, ea dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis tempore, quo beatae reiciendis maxime.</p><br>
+
+                    <div class="w3-left">
+                        <div class="w3-section">
+                            <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
+                            <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-page">
+                    <div class="topnav">
+                        <div class="search-container">
+                            <form action="/action_page.php">
+                                <input type="text" placeholder="Search.." name="search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="blog-cat"><b>Blog Categories</b></div>
+                    <div class=blog-header>
+                        <li><a href="#">Branding</a></li>
+                        <hr>
+                        <li><a href="#">Desing Best Practices</a></li>
+                        <hr>
+                        <li><a href="#">Performance</a></li>
+                        <hr>
+                        <li><a href="#">Responsive Design</a></li>
+                        <hr>
+                        <li><a href="#">Typography</a></li>
+                        <hr>
+                        <li><a href="#">User Experience</a></li>
+                        <hr>
+                    </div>
+                    <div class="text-widget"><b>About DesignCO Photos</b>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptate impedit, quam perferendis saepe dolores iusto eaque, tenetur quibusdam itaque ducimus ea quia inventore, excepturi incidunt molestiae esse repudiandae iure?</p>
+                    </div>
+                    <hr>
+
+                    <div class="recent-posts"><b>Recent Posts</b>
+                        <div class="col-1"><a href="index.html"><b>Essay 1</b></a></div>
+                        <div class="c-image"><img src="img/e1.jpg" width="60" height="60"></div>
+                        <div class="c-text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                        <p>July 5th </p>
+                        <div class="col-2"><a href="index.html"><b>Essay 2</b></a></div>
+                        <div class="c-image"><img src="img/e2.jpg" width="60" height="60"></div>
+                        <div class="c-text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                        <p>March 8th </p>
+                        <div class="col-3"><a href="index.html"><b>Essay 3</b></a></div>
+                        <div class="c-image"><img src="img/e3.jpg" width="60" height="60"></div>
+                        <div class="c-text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                        <p>June 25th </p>
+                    </div>
+                    <hr>
+                    
+                    <div class="widget">
+                        <ol class="widget-list" id="managers">
+                            <li>
+                                <a class="widget-list-link">
+                                    <img src="img/e1.jpg" width="50" height="50">
+                                    Essay 2 <span>March 8,2018</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="widget-list-link">
+                                    <img src="img/e2.jpg" width="50" height="50">
+                                    Essay 3 <span>June 25,2018</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="widget-list-link">
+                                    <img src="img/e3.jpg" width="50" height="50">
+                                    Essay 1 <span>July 5, 2018</span>
+                                </a>
+                            </li>
+                        </ol>
+
+
+                        <ol class="widget-list" id="developers">
+                            <li>
+                                <a class="widget-list-link">
+                                    <img src="img/e2.jpg" width="50" height="50">
+                                    Essay 1 <span>July 5, 2018</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="widget-list-link">
+                                    <img src="img/e3.jpg" width="50" height="50">
+                                    Essay 2 <span>March 8,2018</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="widget-list-link">
+                                    <img src="img/e1.jpg" width="50" height="50">
+                                    Essay 3 <span>June 25,2018</span>
+                                </a>
+                            </li>
+                        </ol>
+
+                        <ul class="widget-tabs">
+                            <li class="widget-tab">
+                                <a href="#managers" class="widget-tab-link">Recent</a>
+                            <li class="widget-tab">
+                                <a href="#developers" class="widget-tab-link">Popular</a>
+                        </ul>
+                    </div>
+                    <hr>
+                    <p><b>Accordion</b></p>
+                        <div id="accordion">
+                            <h6 id="ac-section">Website Design</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, itaque!</p>
+                            <h6 id="ac-section">Website Dev.</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, corporis!</p>
+                            <h6 id="ac-section">Content Man.</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, labore.</p>
+                            <h6 id="ac-section">E-Support</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, fuga.</p>
+                        </div>
+                    <hr>
+                    <p><b>Flicker Feed</b></p>
+                    <div id="flicker-feed">
+                      <ul>
+                           <li><img src="img/dean.jpg" width="90" height="90">
+                           <li><img src="img/old.jpg" width="90" height="90">
+                           <li><img src="img/keanu.jpg" width="90" height="90">
+                           <li><img src="img/oldie.jpg" width="90" height="90">
+                      </ul>       
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div id="footer-top">
+
+                    <div class="footer-col">
+                        <h2>Our company <b>DESIGNCO</b> has purpose to make a world much more capable for internet technologies. We are providing web based solutions. Come and be a part of this growing technology. </h2>
+                    </div>
+
+                    <div class="footer-col">
+                        <h6><b><a href="Publish What You Learn">Publish What You Learn</a></b></h6>
+                        <i>You can learn and share at the same. Share your information about tech with us! Join the family!</i>
+                        <h6><b><a href="Redesigning With Personality">Design With Personality</a></b></h6>
+                        <i>Be yourself and be happy!</i>
+                        <h6><b><a href="Learn From Best Resources">Learn From Best Resources</a></b></h6>
+                        <i>Learn from best people all around the world without any purchase!</i>
+                    </div>
+                    <div class="footer-col">
+                        <div class="f-photos">
+                            <a href="img/f1.jpg"><img src="img/f1.jpg" width="60" height="80"></a>
+                            <a href="img/f9.jpg"><img src="img/f9.jpg" width="60" height="80"></a>
+                            <a href="img/f4.jpg"><img src="img/f4.jpg" width="60" height="80"></a>
+                            <a href="img/f8.jpg"><img src="img/f8.jpg" width="60" height="80"></a>
+                            <a href="img/f5.jpg"><img src="img/f5.jpg" width="60" height="80"></a>
+                            <a href="img/f7.jpg"><img src="img/f7.jpg" width="60" height="80"></a>
+                        </div>
+                        <div class="text-developers"><b>Dev.Team</b></div>
+                    </div>
+                </div>
+
+                <div id="footer-bottom">
+                    <ul>
+                        <li>
+                            <a href="#" class="btn-social">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social">
+                                <i class="fa fa-wordpress"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social">
+                                <i class="fa fa-reddit"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social">
+                                <i class="fa fa-pinterest"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <p>© 2019 DESIGNCO. All Rights Reserved. <a href="Terms and Conditions">Terms and Conditions</a> <a href="Legal Notice">Legal Notice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
