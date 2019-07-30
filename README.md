@@ -17,16 +17,16 @@ Used technologies:
 ---
 
 #### Homepage
-![Homepage view](https://user-images.githubusercontent.com/29989590/62157319-88a96a00-b315-11e9-9c01-666c267ef901.png)
+![1](https://user-images.githubusercontent.com/29989590/62159517-9dd4c780-b31a-11e9-930e-f3b9dbd1033d.png)
 
 #### Blog
-![Blog view](https://user-images.githubusercontent.com/29989590/62157362-a5de3880-b315-11e9-9004-1745fc3b3157.png)
+![2](https://user-images.githubusercontent.com/29989590/62159560-b04f0100-b31a-11e9-8260-50738e7e8460.png)
 
 #### Employees
-![Employees view](https://user-images.githubusercontent.com/29989590/62157431-d4f4aa00-b315-11e9-9afb-7eeb1c3aeacb.png)
+![3](https://user-images.githubusercontent.com/29989590/62159588-c0ff7700-b31a-11e9-9ea3-3bed7ed05bb3.png)
 
 #### Contact
-![Contact view](https://user-images.githubusercontent.com/29989590/62157490-f190e200-b315-11e9-963e-1b9e838ac156.png)
+![4](https://user-images.githubusercontent.com/29989590/62159610-ceb4fc80-b31a-11e9-80c3-681a18a411c1.png)
 
 ---
 ##### Collapsibles/Accordion
@@ -48,5 +48,3 @@ Used technologies:
 ##### Slideshow / Carousel
 ![slide](https://user-images.githubusercontent.com/29989590/62159017-716c7b80-b319-11e9-982d-b5e32f000921.gif)
 ---
-
-
