@@ -29,6 +29,8 @@ Used technologies:
 ![Contact view](https://user-images.githubusercontent.com/29989590/62157490-f190e200-b315-11e9-963e-1b9e838ac156.png)
 
 ---
-
-![akordeon](https://user-images.githubusercontent.com/29989590/62157656-564c3c80-b316-11e9-860f-334e2af5f833.gif)
+##### Collapsibles/Accordion
+[w3schools.com](https://www.w3schools.com/howto/howto_js_accordion.asp)
+![Collapsibles/Accordion](https://user-images.githubusercontent.com/29989590/62157656-564c3c80-b316-11e9-860f-334e2af5f833.gif)
+##### 
 
